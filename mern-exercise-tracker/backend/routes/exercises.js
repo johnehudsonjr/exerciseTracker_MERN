@@ -13,13 +13,15 @@ router.route('/add').post((req, res) => {
     const duration = Number(req.body.duration);
     const date = Date.parse(req.body.date);
 
+    // Saves the information from above into newExercise variable.
     const newExercise = new Exercise({
         username,
         description,
         duration,
         date,
-    });
+    }); 
 
+    // Saves newExercise to variable
     newExercise.save()
         .then(() => res.json('Exercise added!'))
         .catch(err => res.status(400).json('Error: ' + err));

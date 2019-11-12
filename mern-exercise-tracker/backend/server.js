@@ -32,7 +32,7 @@ connection.once('open', () => {
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 
-    // When when someone goes to https://localhost:5000/exercises, it will use exercisesRouter file (exercises.js)
+    // When when someone goes to https://localhost:5000/exercises, it will use exercisesRouter file (exercises.js)/ usersRouter
     app.use('/exercises', exercisesRouter);
     app.use('/users', usersRouter);
 
@@ -40,3 +40,5 @@ const usersRouter = require('./routes/users');
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+// cd into backend and run nodemon server to start server
